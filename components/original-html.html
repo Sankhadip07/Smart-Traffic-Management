@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50" data-theme="light">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-traffic-light text-white"></i>
+                        </div>
+                        <span class="ml-2 text-xl font-semibold text-gray-900">Smart Traffic AI</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#problem" class="text-gray-700 hover:text-blue-600 transition">Problem</a>
+                    <a href="#solution" class="text-gray-700 hover:text-blue-600 transition">Solution</a>
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 transition">Features</a>
+                    <a href="#tech" class="text-gray-700 hover:text-blue-600 transition">Technology</a>
+                    <a href="#team" class="text-gray-700 hover:text-blue-600 transition">Team</a>
+                    <a href="#Sign In" class="text-gray-700 hover:text-blue-600 transition">Sign In</a>
+                    <a href="#Sign Up" class="text-gray-700 hover:text-blue-600 transition">Sign Up</a>
+                    
+                    <!-- ADDED: Theme toggle button (does not remove/alter your existing links) -->
+                    <button id="theme-toggle"
+                        class="theme-toggle-btn ml-2 p-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50"
+                        aria-label="Toggle theme"></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white pt-20 pb-16 hero-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Smart Traffic Management System</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90">Revolutionizing Urban Mobility with AI-Powered Traffic
+                    Optimization</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#demo"
+                        class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        View Demo
+                    </a>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button class="btn-outline">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="bg-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 stat-grid">
+                <div class="stat-card bg-blue-50 p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-blue-600 mb-2">40%</div>
+                    <p class="text-gray-600">Traffic Reduction</p>
+                </div>
+                <div class="stat-card bg-green-50 p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-green-600 mb-2">25%</div>
+                    <p class="text-gray-600">Fuel Savings</p>
+                </div>
+                <div class="stat-card bg-purple-50 p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-purple-600 mb-2">60%</div>
+                    <p class="text-gray-600">Faster Response</p>
+                </div>
+                <div class="stat-card bg-orange-50 p-6 rounded-xl text-center">
+                    <div class="text-3xl font-bold text-orange-600 mb-2">85%</div>
+                    <p class="text-gray-600">Accuracy Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section id="problem" class="py-16 bg-gray-50 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">The Urban Traffic Challenge</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Rapid urbanization has led to unprecedented traffic
+                    congestion, costing cities billions and impacting quality of life.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                        <h3 class="text-xl font-semibold mb-4 text-red-600">Key Problems</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                Average commuter spends 100+ hours annually in traffic
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                30% increased carbon emissions due to congestion
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                Emergency vehicles delayed by up to 40%
+                            </li>
+                            <li class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                                Inefficient traffic light timing wasting millions in fuel
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="traffic-visual bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="relative h-48 bg-gray-100 rounded-lg overflow-hidden">
+                        <!-- Traffic simulation -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-r from-green-400 via-yellow-400 to-red-400 opacity-20">
+                        </div>
+                        <div class="car-animation absolute top-8 left-0 w-6 h-3 bg-blue-500 rounded"></div>
+                        <div class="car-animation absolute top-16 left-0 w-6 h-3 bg-red-500 rounded"
+                            style="animation-delay: 2s"></div>
+                        <div class="car-animation absolute top-24 left-0 w-6 h-3 bg-green-500 rounded"
+                            style="animation-delay: 4s"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">
+                    Our Intelligent Solution
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Leveraging AI and IoT to create adaptive, responsive traffic
+                    management systems.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow">
+                    <i class="fas fa-brain text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Analytics</h3>
+                    <p class="text-gray-600">
+                        Machine learning algorithms predict traffic patterns and optimize
+                        signal timing in real-time.
+                    </p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow">
+                    <i class="fas fa-satellite-dish text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">IoT Integration</h3>
+                    <p class="text-gray-600">
+                        Network of sensors and cameras providing real-time traffic data
+                        across the city.
+                    </p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl shadow">
+                    <i class="fas fa-bolt text-3xl text-yellow-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Instant Response</h3>
+                    <p class="text-gray-600">
+                        Adapt immediately to accidents, emergencies, and changing traffic
+                        conditions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive traffic management solutions designed for modern cities.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <!-- <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-lightbulb text-white"></i>
+                        </div> -->
+                        <div>
+                            <h3 class="text-xl font-semibold">Smart Traffic Signals</h3>
+                            <p class="text-gray-600 mt-2">Adaptive signal timing based on real-time traffic flow data,
+                                reducing wait times by up to 40%.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <!-- <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-ambulance text-white"></i>
+                        </div> -->
+                        <div>
+                            <h3 class="text-xl font-semibold">Emergency Priority</h3>
+                            <p class="text-gray-600 mt-2">Automated green corridor creation for emergency vehicles,
+                                reducing response times significantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <!-- <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="car-crash" class="w-8 h-8 text-white"></i>
+                        </div> -->
+                        <div>
+                            <h3 class="text-xl font-semibold">Accident Detection</h3>
+                            <p class="text-gray-600 mt-2">AI-powered accident detection and instant alerts to
+                                authorities for faster action.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg card-hover">
+                    <div class="flex items-start mb-4">
+                        <!-- <div class="feature-icon w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <i class=""></i>
+                        </div> -->
+                        <div>
+                            <h3 class="text-xl font-semibold">Scalable for Smart Cities</h3>
+                            <p class="text-gray-600 mt-2">Easily integrates with existing infrastructure and scales as
+                                urban needs grow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology -->
+    <section id="tech" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Technology Stack</h2>
+            <p class="text-xl text-gray-600 mb-8">
+                Built with cutting-edge tools and platforms.
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-lg">AI / ML</span>
+                <span class="px-4 py-2 bg-green-100 text-green-800 rounded-lg">IoT</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg">Cloud</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-lg">Big Data</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========= DEMO (no emergency toggle) ========= -->
+    <section id="demo" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-10 text-gray-900">Live Demo</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Route / Fuel / Time Estimator -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-600">Route Estimator</h3>
+                    <input id="from" type="text" placeholder="From" class="w-full mb-2 p-2 border rounded">
+                    <input id="to" type="text" placeholder="To" class="w-full mb-3 p-2 border rounded">
+                    <button id="calc-btn" class="w-full btn-primary">Calculate</button>
+                    <p id="result" class="mt-3 text-sm text-gray-700">ETA: -- | Fuel: -- | Saved: --</p>
+                </div>
+
+                <!-- Live Congestion Heatmap placeholder -->
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3 text-green-600">Congestion Heatmap</h3>
+                    <div class="h-48 bg-gray-200 rounded flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-3xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Meet the Team</h2>
+                <p class="text-xl text-gray-600">
+                    A passionate group of innovators driving smart traffic solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Sankhadip Singha Roy</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Sayan Debnath</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Mitesh Malas</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Samarjit Halder</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Mahasweta Bhowmik</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow text-center">
+                    <img src="https://i.pinimg.com/736x/65/c3/8f/65c38ff710a3b36f1d8860d33a8ac69a.jpg"
+                        class="w-24 h-24 rounded-full mx-auto mb-4" alt="Team member">
+                    <h3 class="text-lg font-semibold">Rahul Kumar Bharati</h3>
+                    <p class="text-gray-600">Electrical Engineering Student</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Smart Traffic AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,488 @@
+:root {
+  --primary: #2563eb;
+  --secondary: #0ea5e9;
+  --accent: #10b981;
+  --dark: #1e293b;
+  --light: #f8fafc;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.traffic-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.car-animation {
+  animation: moveCar 8s linear infinite;
+}
+
+@keyframes moveCar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(1000%);
+  }
+}
+
+.pulse-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+.tech-card {
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.tech-card:hover {
+  border-left-color: var(--primary);
+  transform: translateX(5px);
+}
+
+.team-card {
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.dashboard-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  nav .hidden.md\\:flex.mobile-visible {
+    display: flex !important;
+    flex-direction: column;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  nav .dark .mode .hidden.md\\:flex.mobile-visible {
+    background: #1e293b;
+  }
+
+  nav .hidden.md\\:flex.mobile-visible a {
+    margin: 10px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem !important;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .feature-grid,
+  .tech-grid,
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .traffic-overview-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Animation classes for scroll effects */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Notification styles */
+.notification {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.notification.visible {
+  transform: translateX(0);
+}
+
+.notification.success {
+  background-color: #10b981;
+  color: white;
+}
+
+.notification.error {
+  background-color: #ef4444;
+  color: white;
+}
+
+.notification.info {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* Loading states */
+.loading {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes loadingPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline {
+  border: 2px solid white;
+  color: white;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Section spacing consistency */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Text utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+  padding: 0.5rem;
+  background: #1e293b;
+  color: #d1d5db;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Accessibility improvements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .gradient-bg {
+    background: white !important;
+    color: black !important;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    display: none;
+  }
+
+  .stat-card {
+    break-inside: avoid;
+  }
+}
+
+/* Dark Mode Overrides Updated */
+
+/* Replace .dark-mode with [data-theme="dark"] for consistency */
+[data-theme="dark"] .card-hover,
+[data-theme="dark"] .bg-white {
+  background-color: #1f2937 !important; /* darker gray background */
+  color: #f3f4f6 !important; /* light text */
+}
+
+[data-theme="dark"] .card-hover h3,
+[data-theme="dark"] .card-hover strong,
+[data-theme="dark"] .text-gray-900 {
+  color: #f9fafb !important; /* headings / strong text */
+}
+
+[data-theme="dark"] .card-hover p,
+[data-theme="dark"] .text-gray-600 {
+  color: #d1d5db !important; /* paragraph text */
+}
+
+[data-theme="dark"] .card-hover li {
+  color: #e5e7eb !important; /* list items */
+}
+
+/* Feature icons gradient uses dark mode colors */
+[data-theme="dark"] .feature-icon {
+  background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+}
+
+/* Stat cards background and text */
+[data-theme="dark"] .stat-card {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .stat-card .text-3xl {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .stat-card p {
+  color: #cbd5e1 !important;
+}
+
+/* Hero section text */
+[data-theme="dark"] .hero-section,
+[data-theme="dark"] .hero-section .text-white {
+  color: #ffffff !important;
+}
+
+/* Hero buttons */
+[data-theme="dark"] .hero-section .bg-white {
+  background-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+[data-theme="dark"] .hero-section .bg-white:hover {
+  background-color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .hero-section .border-white {
+  border-color: #e2e8f0 !important;
+}
+
+/* Navbar toggle button */
+[data-theme="dark"] .theme-toggle-btn {
+  border-color: #334155 !important;
+  color: #131f2e !important;
+}
+
+[data-theme="dark"] .theme-toggle-btn:hover {
+  background-color: #0b1220 !important;
+}
+
+/* Links hover color keeps brand feel on dark */
+[data-theme="dark"] a:hover {
+  color: var(--primary) !important;
+}
+
+/* Traffic visual background in dark */
+[data-theme="dark"] .traffic-visual .bg-gray-100 {
+  background-color: #0b1220 !important;
+}
+
+/* Card hover shadow in dark */
+[data-theme="dark"] .card-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* Background overrides for common utility classes */
+[data-theme="dark"] body,
+[data-theme="dark"] .bg-gray-50 {
+  background-color: #0b1220 !important;
+}
+
+[data-theme="dark"] nav,
+[data-theme="dark"] .bg-white {
+  background-color: #0f172a !important;
+}
+
+/* Text color overrides */
+[data-theme="dark"] .text-gray-900 {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .text-gray-600 {
+  color: #94a3b8 !important;
+}
+
+/* Gradient background override */
+[data-theme="dark"] .gradient-bg {
+  background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%) !important;
+}
+
+/* Light pastel backgrounds -> darker blocks */
+[data-theme="dark"] .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.12) !important;
+}
+
+[data-theme="dark"] .bg-green-50 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+[data-theme="dark"] .bg-purple-50 {
+  background-color: rgba(147, 51, 234, 0.12) !important;
+}
+
+[data-theme="dark"] .bg-orange-50 {
+  background-color: rgba(249, 115, 22, 0.12) !important;
+}
+/* ---------- DEMO DARK-MODE FIXES (no emergency toggle) ---------- */
+[data-theme="dark"] #demo {
+  background-color: #0b1220 !important;
+}
+
+[data-theme="dark"] #demo h2 {
+  color: #f3f4f6 !important;
+}
+
+[data-theme="dark"] #demo .bg-white {
+  background-color: #1f2937 !important;
+  border: 1px solid #374151;
+}
+
+[data-theme="dark"] #demo h3 {
+  color: #e5e7eb !important;
+}
+
+[data-theme="dark"] #demo p,
+[data-theme="dark"] #demo span {
+  color: #d1d5db !important;
+}
+
+[data-theme="dark"] #demo input[type="text"] {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+[data-theme="dark"] #demo input[type="text"]::placeholder {
+  color: #9ca3af;
+}
