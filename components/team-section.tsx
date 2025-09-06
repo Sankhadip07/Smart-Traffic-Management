@@ -34,27 +34,27 @@ export default function TeamSection() {
     {
       name: "Sayan Debnath",
       role: "Electrical Engineering Student",
-      image: "/male-engineer-headshot.png",
+      image: "/male-engineer2-headshot.png",
     },
     {
       name: "Mitesh Malas",
       role: "Electrical Engineering Student",
-      image: "/male-engineer-headshot.png",
+      image: "/male-engineer3-headshot.png",
     },
     {
       name: "Samarjit Halder",
       role: "Electrical Engineering Student",
-      image: "/male-engineer-headshot.png",
+      image: "/male-engineer4-headshot.png",
     },
     {
       name: "Mahasweta Bhowmik",
       role: "Electrical Engineering Student",
-      image: "/professional-headshot-female-engineer.jpg",
+      image: "/professional-headshot-female-engineer.png",
     },
     {
       name: "Rahul Kumar Bharati",
       role: "Electrical Engineering Student",
-      image: "/male-engineer1-headshot.png",
+      image: "/male-engineer6-headshot.png",
     },
   ]
 
